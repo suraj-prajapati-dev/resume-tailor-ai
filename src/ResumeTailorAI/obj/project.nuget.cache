@@ -1,0 +1,147 @@
+{
+  "version": 2,
+  "dgSpecHash": "eHd4iN6YeLw=",
+  "success": true,
+  "projectFilePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\azure.ai.openai\\2.1.0-beta.1\\azure.ai.openai.2.1.0-beta.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.55.0\\azure.core.1.55.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.21.0\\azure.identity.1.21.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\azure.storage.blobs\\12.29.1\\azure.storage.blobs.12.29.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\azure.storage.common\\12.28.0\\azure.storage.common.12.28.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\documentformat.openxml\\3.0.2\\documentformat.openxml.3.0.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\documentformat.openxml.framework\\3.0.2\\documentformat.openxml.framework.3.0.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\google.protobuf\\3.30.2\\google.protobuf.3.30.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\markdig\\0.38.0\\markdig.0.38.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.ai\\1.18.0\\microsoft.agents.ai.1.18.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.ai.abstractions\\1.18.0\\microsoft.agents.ai.abstractions.1.18.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.ai.harness\\1.18.0\\microsoft.agents.ai.harness.1.18.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.authentication\\1.8.55-beta\\microsoft.agents.authentication.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.builder\\1.8.55-beta\\microsoft.agents.builder.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.connector\\1.8.55-beta\\microsoft.agents.connector.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.core\\1.8.55-beta\\microsoft.agents.core.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.hosting.aspnetcore\\1.8.55-beta\\microsoft.agents.hosting.aspnetcore.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.storage\\1.8.55-beta\\microsoft.agents.storage.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.agents.storage.transcript\\1.8.55-beta\\microsoft.agents.storage.transcript.1.8.55-beta.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.29\\microsoft.aspnetcore.authentication.jwtbearer.8.0.29.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.10\\microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\10.0.10\\microsoft.bcl.asyncinterfaces.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.bcl.memory\\10.0.10\\microsoft.bcl.memory.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlite\\9.0.0\\microsoft.data.sqlite.9.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.0\\microsoft.data.sqlite.core.9.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.ai\\10.9.0\\microsoft.extensions.ai.10.9.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.9.0\\microsoft.extensions.ai.abstractions.10.9.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.ai.evaluation\\10.7.0\\microsoft.extensions.ai.evaluation.10.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.compliance.abstractions\\10.5.0\\microsoft.extensions.compliance.abstractions.10.5.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.vectordata.abstractions\\10.7.0\\microsoft.extensions.vectordata.abstractions.10.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identity.client\\4.83.1\\microsoft.identity.client.4.83.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.83.1\\microsoft.identity.client.extensions.msal.4.83.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.22.0\\microsoft.identitymodel.abstractions.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.22.0\\microsoft.identitymodel.jsonwebtokens.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.logging\\8.22.0\\microsoft.identitymodel.logging.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.22.0\\microsoft.identitymodel.protocols.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.22.0\\microsoft.identitymodel.protocols.openidconnect.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.22.0\\microsoft.identitymodel.tokens.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.validators\\8.22.0\\microsoft.identitymodel.validators.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.ml.tokenizers\\2.0.0\\microsoft.ml.tokenizers.2.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.semantickernel\\1.23.0\\microsoft.semantickernel.1.23.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.semantickernel.abstractions\\1.23.0\\microsoft.semantickernel.abstractions.1.23.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.semantickernel.connectors.azureopenai\\1.23.0\\microsoft.semantickernel.connectors.azureopenai.1.23.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.semantickernel.connectors.openai\\1.23.0\\microsoft.semantickernel.connectors.openai.1.23.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.semantickernel.core\\1.23.0\\microsoft.semantickernel.core.1.23.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\openai\\2.13.0\\openai.2.13.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\pdfpig\\0.1.8\\pdfpig.0.1.8.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.10\\sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.core\\2.1.10\\sqlitepclraw.core.2.1.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.10\\sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.10\\sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.clientmodel\\1.14.0\\system.clientmodel.1.14.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.10\\system.configuration.configurationmanager.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.22.0\\system.identitymodel.tokens.jwt.8.22.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io.hashing\\10.0.3\\system.io.hashing.10.0.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io.packaging\\8.0.0\\system.io.packaging.8.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.memory.data\\10.0.10\\system.memory.data.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.numerics.tensors\\10.0.11\\system.numerics.tensors.10.0.11.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.runtime.caching\\10.0.10\\system.runtime.caching.10.0.10.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.security.cryptography.protecteddata\\10.0.10\\system.security.cryptography.protecteddata.10.0.10.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Detected package version outside of dependency constraint: Microsoft.SemanticKernel.Connectors.OpenAI 1.23.0 requires OpenAI (= 2.1.0-beta.1) but version OpenAI 2.13.0 was resolved.",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "OpenAI",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1904",
+      "level": "Warning",
+      "message": "Package 'Microsoft.SemanticKernel.Core' 1.23.0 has a known critical severity vulnerability, https://github.com/advisories/GHSA-2ww3-72rp-wpp4",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "Microsoft.SemanticKernel.Core",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.10 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.IO.Packaging' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-f32c-w444-8ppv",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "System.IO.Packaging",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.IO.Packaging' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
+      "projectPath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "warningLevel": 1,
+      "filePath": "E:\\Practice\\ResumeTrailor\\src\\ResumeTailorAI\\ResumeTailorAI.csproj",
+      "libraryId": "System.IO.Packaging",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
