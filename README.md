@@ -222,7 +222,7 @@ Session configuration:
 
 - `App:AI:Provider` - HuggingFace
 - `App:AI:Endpoint` - `https://router.huggingface.co`
-- `App:AI:ApiKey` - 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 (example, replace with your key)
+- `App:AI:ApiKey` - hf_qGWfwiY******************** (example, replace with your key)
 - `App:AI:Model` - deepseek-ai/DeepSeek-R1
 - `App:AI:FallbackModel` - zai-org/GLM-5:novita
 - `App:AI:Temperature` - 0.5
