@@ -97,15 +97,15 @@ The system may only improve the presentation of information supported by the ori
 
 ```mermaid
 flowchart TD
-    UI -->|HTTP Request| ASP.NET Core API
-    ASP.NET Core API -->|Pipeline| ResumeTailor Harness
-    ResumeTailor Harness -->|Skills| Analysis
-    Analysis -->|Skill Matching| Skills
-    Skills -->|Resume Tailoring| Tailoring
-    Tailoring -->|ATS Validation| ATS
-    ATS -->|Guardrail| Guardrail
-    Guardrail -->|Human Approval| Human Approval
-    Human Approval -->|Document Generation| Document Generation
+    UI["UI"] -->|HTTP Request| API["ASP.NET Core API"]
+    API -->|Pipeline| Harness["ResumeTailor Harness"]
+    Harness -->|Skills| Analysis["Analysis"]
+    Analysis -->|Skill Matching| Skills["Skills"]
+    Skills -->|Resume Tailoring| Tailoring["Tailoring"]
+    Tailoring -->|ATS Validation| ATS["ATS"]
+    ATS -->|Guardrail| Guardrail["Guardrail"]
+    Guardrail -->|Human Approval| Approval["Human Approval"]
+    Approval -->|Document Generation| Documents["Document Generation"]
 ```
 
 **Single Monolithic ASP.NET Core Application**
