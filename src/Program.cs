@@ -1,29 +1,20 @@
-using Microsoft.Agents.AI;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.Connectors.OpenAI;
 using ResumeTailorAI.Agents;
 using ResumeTailorAI.Configuration;
 using ResumeTailorAI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<AppConfiguration>(
-    builder.Configuration.GetSection("App"));
+builder.Services.Configure<AppConfiguration>(builder.Configuration.GetSection("App"));
 
-builder.Services.Configure<AIConfiguration>(
-    builder.Configuration.GetSection("App:AI"));
+builder.Services.Configure<AIConfiguration>(builder.Configuration.GetSection("App:AI"));
 
-builder.Services.Configure<FileConfiguration>(
-    builder.Configuration.GetSection("App:Files"));
+builder.Services.Configure<FileConfiguration>(builder.Configuration.GetSection("App:Files"));
 
-builder.Services.Configure<SessionConfiguration>(
-    builder.Configuration.GetSection("App:Sessions"));
+builder.Services.Configure<SessionConfiguration>(builder.Configuration.GetSection("App:Sessions"));
 
-builder.Services.Configure<ScoringConfiguration>(
-    builder.Configuration.GetSection("App:Scoring"));
+builder.Services.Configure<ScoringConfiguration>(builder.Configuration.GetSection("App:Scoring"));
 
 builder.Services.AddSingleton<IFileService, FileService>();
 builder.Services.AddSingleton<IAIService, AIService>();
@@ -61,12 +52,12 @@ builder.Services.AddSingleton<Kernel>(sp =>
 {
     var config = sp.GetRequiredService<IOptions<AppConfiguration>>().Value;
     var kernelBuilder = Kernel.CreateBuilder();
-    
+
     if (!string.IsNullOrEmpty(config.AI.ApiKey))
     {
         kernelBuilder.AddOpenAIChatCompletion(config.AI.Model, config.AI.ApiKey);
     }
-    
+
     return kernelBuilder.Build();
 });
 
@@ -86,9 +77,7 @@ app.UseSession();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("/index.html");
 

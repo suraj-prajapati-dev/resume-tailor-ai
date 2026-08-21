@@ -135,16 +135,14 @@ All analysis results must be saved as JSON in the session's file memory for late
         if (context.ResumeAnalysis == null)
         {
             _logger.LogInformation("Retrieving Resume Intelligence for session {SessionId}", context.SessionId);
-            context.ResumeAnalysis = await _aiService.AnalyzeResumeAsync(session.ResumeText, ct)
-                ?? new ResumeAnalysisModel();
+            context.ResumeAnalysis = await _aiService.AnalyzeResumeAsync(session.ResumeText, ct) ?? new ResumeAnalysisModel();
             session.AnalysisResult = context.ResumeAnalysis;
         }
 
         if (context.JDAnalysis == null)
         {
             _logger.LogInformation("Retrieving JD Intelligence for session {SessionId}", context.SessionId);
-            context.JDAnalysis = await _aiService.AnalyzeJobDescriptionAsync(session.JDText, context.TargetRole, ct)
-                ?? new JDAnalysisModel { TargetRole = context.TargetRole };
+            context.JDAnalysis = await _aiService.AnalyzeJobDescriptionAsync(session.JDText, context.TargetRole, ct) ?? new JDAnalysisModel { TargetRole = context.TargetRole };
             session.JDAnalysis = context.JDAnalysis;
         }
 
@@ -165,10 +163,7 @@ All analysis results must be saved as JSON in the session's file memory for late
         if (context.TailoringResult == null)
         {
             _logger.LogInformation("Retrieving Resume Tailoring for session {SessionId}", context.SessionId);
-            context.TailoringResult = await _aiService.TailorResumeAsync(
-                resumeAnalysis, jdAnalysis, skillMatch,
-                context.TargetRole, ct)
-                ?? new TailoringResultModel();
+            context.TailoringResult = await _aiService.TailorResumeAsync(resumeAnalysis, jdAnalysis, skillMatch, context.TargetRole, ct) ?? new TailoringResultModel();
             session.TailoringResult = context.TailoringResult;
             _logger.LogInformation("Step 4 completed: Resume Tailoring for session {SessionId}", context.SessionId);
         }
@@ -178,9 +173,7 @@ All analysis results must be saved as JSON in the session's file memory for late
         if (context.AtsResult == null)
         {
             _logger.LogInformation("Retrieving ATS Validation for session {SessionId}", context.SessionId);
-            context.AtsResult = await _aiService.ValidateATSAsync(
-                tailoringResult, jdAnalysis, session.ResumeText, ct)
-                ?? new ATSAnalysisModel();
+            context.AtsResult = await _aiService.ValidateATSAsync(tailoringResult, jdAnalysis, session.ResumeText, ct) ?? new ATSAnalysisModel();
             session.AtsResult = context.AtsResult;
             _logger.LogInformation("Step 5 completed: ATS Validation for session {SessionId}", context.SessionId);
         }

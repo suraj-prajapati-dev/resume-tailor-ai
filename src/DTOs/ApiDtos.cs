@@ -13,6 +13,8 @@ public class ApiResponse<T>
 public class StartSessionRequest
 {
     public string TargetRole { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 }
 
 public class StartSessionResponse

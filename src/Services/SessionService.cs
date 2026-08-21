@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Primitives;
 using ResumeTailorAI.Models;
 using System.Collections.Concurrent;
 
@@ -6,7 +5,7 @@ namespace ResumeTailorAI.Services;
 
 public interface ISessionService
 {
-    Task<ResumeTailorSession> CreateSessionAsync(string targetRole, CancellationToken ct = default);
+    Task<ResumeTailorSession> CreateSessionAsync(string username, string password, string targetRole, CancellationToken ct = default);
     ResumeTailorSession? GetSession(string sessionId);
     void UpdateLastAccessed(string sessionId);
     void UpdateSession(ResumeTailorSession session);
@@ -29,18 +28,18 @@ public class SessionService : ISessionService
         _fileService = fileService;
 
         var cleanupInterval = configuration.GetValue<int>("Sessions:CleanupIntervalMinutes", 10);
-        _cleanupTimer = new Timer(async _ => await CleanupExpiredSessionsAsync(), 
-            null, 
-            TimeSpan.FromMinutes(cleanupInterval), 
+        _cleanupTimer = new Timer(async _ => await CleanupExpiredSessionsAsync(),
+            null,
+            TimeSpan.FromMinutes(cleanupInterval),
             TimeSpan.FromMinutes(cleanupInterval));
     }
 
-    public async Task<ResumeTailorSession> CreateSessionAsync(string targetRole, CancellationToken ct = default)
+    public async Task<ResumeTailorSession> CreateSessionAsync(string userName, string password, string targetRole, CancellationToken ct = default)
     {
         var session = new ResumeTailorSession
         {
             SessionId = Guid.NewGuid().ToString(),
-            TargetRole = targetRole,
+            TargetRole = string.IsNullOrEmpty(targetRole) ? $"{userName}:{password}" : targetRole,
             CreatedAt = DateTime.UtcNow,
             LastAccessedAt = DateTime.UtcNow
         };

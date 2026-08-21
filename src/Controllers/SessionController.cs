@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using ResumeTailorAI.DTOs;
-using ResumeTailorAI.Models;
 using ResumeTailorAI.Services;
 
 namespace ResumeTailorAI.Controllers;
@@ -28,12 +27,12 @@ public class SessionController : ControllerBase
     {
         try
         {
-            var session = await _sessionService.CreateSessionAsync(request.TargetRole);
-            
+            var session = await _sessionService.CreateSessionAsync(request.Username, request.Password, request.TargetRole);
+
             HttpContext.Session.SetString("SessionId", session.SessionId);
-            
+
             _logger.LogInformation("Session started: {SessionId}", session.SessionId);
-            
+
             return Ok(new ApiResponse<StartSessionResponse>
             {
                 Success = true,
@@ -108,7 +107,7 @@ public class SessionController : ControllerBase
             }
 
             _logger.LogInformation("Session ended: {SessionId}", sessionId ?? "unknown");
-            
+
             return Ok(new ApiResponse<object>
             {
                 Success = true,

@@ -30,7 +30,7 @@ public class AnalysisController : ControllerBase
     }
 
     [HttpPost("start")]
-    public async Task<ActionResult<ApiResponse<AnalysisStatusResponse>>> StartAnalysis()
+    public async Task<ActionResult<ApiResponse<AnalysisStatusResponse>>> StartAnalysis([FromQuery] string? targetRole = null)
     {
         using var cts = new CancellationTokenSource(TimeSpan.FromMinutes(5));
         try
@@ -72,7 +72,10 @@ public class AnalysisController : ControllerBase
                     Message = "Job description not uploaded"
                 });
             }
-
+            if (!string.IsNullOrEmpty(targetRole))
+            {
+                session.TargetRole = targetRole;
+            }
             session.IsLocked = true;
             _sessionService.UpdateSession(session);
 
@@ -84,7 +87,7 @@ public class AnalysisController : ControllerBase
             {
                 session.IsLocked = false;
                 _sessionService.UpdateSession(session);
-                
+
                 return StatusCode(500, new ApiResponse<AnalysisStatusResponse>
                 {
                     Success = false,
@@ -151,7 +154,7 @@ public class AnalysisController : ControllerBase
         }
 
         var isComplete = session.GuardrailResult != null;
-        
+
         return Ok(new ApiResponse<AnalysisStatusResponse>
         {
             Success = true,
@@ -260,7 +263,7 @@ public class AnalysisController : ControllerBase
     private static string BuildJdSummary(JDAnalysisModel? jd)
     {
         if (jd == null) return "No JD analysis available";
-        
+
         var summary = $"Target Role: {jd.TargetRole}. ";
         summary += $"Required skills: {jd.RequiredSkills?.Count ?? 0}. ";
         summary += $"Responsibilities identified: {jd.Responsibilities?.Count ?? 0}.";

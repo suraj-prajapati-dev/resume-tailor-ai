@@ -1,11 +1,8 @@
-#pragma warning disable MAAI001
 
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OpenAI;
-using OpenAI.Chat;
 using ResumeTailorAI.Configuration;
 using System.ClientModel;
 
@@ -23,9 +20,7 @@ public class HarnessAgentFactory : IHarnessAgentFactory
     private readonly ILogger<HarnessAgentFactory> _logger;
     private readonly string _skillsPath;
 
-    public HarnessAgentFactory(
-        IOptions<AppConfiguration> config,
-        ILogger<HarnessAgentFactory> logger)
+    public HarnessAgentFactory(IOptions<AppConfiguration> config, ILogger<HarnessAgentFactory> logger)
     {
         _config = config.Value.AI;
         _logger = logger;
@@ -47,8 +42,8 @@ Ask for human approval before generating final documents.",
             ChatOptions = new ChatOptions
             {
                 Instructions = "You are ResumeTailor-AI, an AI-powered resume tailoring assistant. Your goal is to help users tailor their resumes to specific job descriptions while ensuring accuracy and compliance with ATS requirements. Your primary directive is to never fabricate information - only enhance existing resume content based on the job description.",
-                ModelId = _config.Model,
-                Temperature = (float)_config.Temperature,
+                //ModelId = _config.Model,
+                Temperature = (float)_config.Temperature
             },
             AgentModeProviderOptions = new AgentModeProviderOptions
             {
@@ -74,12 +69,19 @@ Ask for human approval before generating final documents.",
             var endpoint = new Uri(_config.Endpoint);
             var credential = new ApiKeyCredential(_config.ApiKey);
             var client = new global::Azure.AI.OpenAI.AzureOpenAIClient(endpoint, credential);
-            return (IChatClient)client.GetChatClient(_config.Model);
+            return client.GetChatClient(_config.Model).AsIChatClient();
+        }
+        else if (_config.Provider == "Ollama" && !string.IsNullOrEmpty(_config.Endpoint))
+        {
+            var endpoint = new Uri(_config.Endpoint);
+            return new OllamaChatClient(endpoint, _config.Model);
         }
         else
         {
-            var client = new OpenAIClient(_config.ApiKey);
-            return (IChatClient)client.GetChatClient(_config.Model);
+            var clientOptions = new OpenAIClientOptions() { Endpoint = new Uri(_config.Endpoint) };
+            var credential = new ApiKeyCredential(_config.ApiKey);
+            var client = new OpenAIClient(credential, options: clientOptions);
+            return client.GetChatClient(_config.Model).AsIChatClient();
         }
     }
 }
